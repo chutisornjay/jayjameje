@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+  <title>กำลังเข้าสู่ Form</title>
+  <style>
+    .centerScreen {
+      margin-top: 20;
+      margin-right: auto;
+      margin-bottom: 20;
+      margin-left: auto;
+    }
+  </style>
+</head>
+
+<body style="background-color: powderblue;">
+  <div class="centerScreen">
+    <center>
+      <img src="C:\Users\gamta\Desktop\test\rang.jpg" height="200px" , width="200px" />
+      <h1>
+        กำลังเข้าสู่ การลงทะเบียนวัคซีน โปรดรอสักครู่
+      </h1>
+    </center>
+  </div>
+</body>
+<footer>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script>
+    /// Config Your LIFF ID Here
+    const liffId = "1656813933-ZKod469g";
+    /// Config Your LIFF ID Here
+    liff.ready
+      .then(() => {
+        if (liff.isLoggedIn()) {
+          return liff.getProfile();
+        } else {
+          liff.login({
+            redirectUri: "https://liff.line.me/1656813933-ZKod469g",
+          });
+        }
+      })
+      .then((profile) => {
+        window.location.replace(
+          'https://docs.google.com/forms/d/e/1FAIpQLSeGVq5aR_l9SdPlvO3onyTlpFIKlsGiu9Ie93rEqJuIo4fpLw/viewform?usp=pp_url&entry.1337964720=$%7Bprofile.userId%7D&entry.684748927=$%7Bprofile.displayName%7D&entry.552044229=$%7Bprofile.pictureUrl%7D&entry.281310370=$%7Bprofile.statusMessage%7D'
+        );
+      });
+    liff.init(
+      {
+        liffId: liffId,
+      },
+      () => {},
+      (err) => {
+        window.alert(err);
+      }
+    );
+  </script>
+</footer>
